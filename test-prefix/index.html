@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="gallery.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #fafafa;
+      background: #000;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 935px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 30px 20px;
+      border-bottom: 1px solid #262626;
+      margin-bottom: 28px;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      max-width: 935px;
+      margin: 0 auto;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #262626;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .profile-username {
+      font-size: 28px;
+      font-weight: 300;
+      color: #fafafa;
+    }
+
+    .profile-stats {
+      display: flex;
+      gap: 40px;
+      font-size: 16px;
+    }
+
+    .profile-stats span {
+      color: #fafafa;
+    }
+
+    .profile-stats strong {
+      font-weight: 600;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .image-grid {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: #000;
+      cursor: pointer;
+    }
+
+    .album-icon {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 24px;
+      height: 24px;
+      color: white;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .image-item:not(:first-child) {
+      display: none;
+    }
+
+    .image-item {
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-item a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+    }
+
+    .image-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      border-top: 1px solid #262626;
+      text-align: center;
+      color: #737373;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile-header {
+        gap: 28px;
+        padding: 0 16px;
+      }
+
+      .profile-pic {
+        width: 77px;
+        height: 77px;
+      }
+
+      .profile-username {
+        font-size: 24px;
+      }
+
+      .profile-stats {
+        gap: 20px;
+        font-size: 14px;
+      }
+
+      header {
+        padding: 16px 0;
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="profile-header">
+      
+      <div class="profile-pic"></div>
+      
+      <div class="profile-info">
+        <div class="profile-username">Bob</div>
+        <div class="profile-stats">
+          <span><strong>7</strong> posts</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <main>
+      
+        
+        <div class="image-grid" data-gallery="gallery-0">
+          
+          <div class="image-item">
+            <a href="food5.jpg"
+               data-pswp-width="800"
+               data-pswp-height="600">
+              <img src="food5.jpg" alt="Add classic pizza" loading="lazy" />
+              <div class="pswp-caption-content-0"><strong>CAPTION: Add classic pizza</strong><br />Classic pepperoni pizza 🍕</div>
+            </a>
+          </div>
+          
+          
+        </div>
+        
+        <div class="image-grid" data-gallery="gallery-1">
+          
+          <div class="image-item">
+            <a href="food4.jpg"
+               data-pswp-width="800"
+               data-pswp-height="1048">
+              <img src="food4.jpg" alt="Add sweet ice cream" loading="lazy" />
+              <div class="pswp-caption-content-1"><strong>CAPTION: Add sweet ice cream</strong><br />Sweet ice cream treat 🍦</div>
+            </a>
+          </div>
+          
+          
+        </div>
+        
+        <div class="image-grid" data-gallery="gallery-2">
+          
+          <div class="image-item">
+            <a href="food3.jpg"
+               data-pswp-width="800"
+               data-pswp-height="533">
+              <img src="food3.jpg" alt="Add juicy burger" loading="lazy" />
+              <div class="pswp-caption-content-2"><strong>CAPTION: Add juicy burger</strong><br />Juicy burger with fries 🍔</div>
+            </a>
+          </div>
+          
+          
+        </div>
+        
+        <div class="image-grid" data-gallery="gallery-3">
+          
+          <div class="image-item">
+            <a href="food2.jpg"
+               data-pswp-width="800"
+               data-pswp-height="600">
+              <img src="food2.jpg" alt="Add delicious tacos" loading="lazy" />
+              <div class="pswp-caption-content-3"><strong>CAPTION: Add delicious tacos</strong><br />Delicious tacos for lunch 🌮</div>
+            </a>
+          </div>
+          
+          
+        </div>
+        
+        <div class="image-grid" data-gallery="gallery-4">
+          
+          <div class="image-item">
+            <a href="food1.jpg"
+               data-pswp-width="800"
+               data-pswp-height="800">
+              <img src="food1.jpg" alt="Add fresh sushi platter" loading="lazy" />
+              <div class="pswp-caption-content-4"><strong>CAPTION: Add fresh sushi platter</strong><br />Fresh sushi platter 🍣</div>
+            </a>
+          </div>
+          
+          
+        </div>
+        
+        <div class="image-grid" data-gallery="gallery-5">
+          
+          <div class="image-item">
+            <a href="pizza.jpg"
+               data-pswp-width="800"
+               data-pswp-height="600">
+              <img src="pizza.jpg" alt="second post" loading="lazy" />
+              <div class="pswp-caption-content-5"><strong>CAPTION: second post</strong><br />yummm pizza</div>
+            </a>
+          </div>
+          
+          <div class="image-item">
+            <a href="sushi.jpg"
+               data-pswp-width="800"
+               data-pswp-height="800">
+              <img src="sushi.jpg" alt="second post" loading="lazy" />
+              <div class="pswp-caption-content-5"><strong>CAPTION: second post</strong><br />                                                               </div>
+            </a>
+          </div>
+          
+          <div class="image-item">
+            <a href="tacos.jpg"
+               data-pswp-width="800"
+               data-pswp-height="600">
+              <img src="tacos.jpg" alt="second post" loading="lazy" />
+              <div class="pswp-caption-content-5"><strong>CAPTION: second post</strong><br />OLYMPUS DIGITAL CAMERA</div>
+            </a>
+          </div>
+          
+          
+          <svg class="album-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="21" y1="8" x2="21" y2="19"/>
+            <path d="M 21 19 Q 21 21 19 21" fill="none"/>
+            <line x1="19" y1="21" x2="8" y2="21"/>
+            <rect x="3" y="3" width="13" height="13" rx="2" fill="currentColor"/>
+          </svg>
+          
+        </div>
+        
+        <div class="image-grid" data-gallery="gallery-6">
+          
+          <div class="image-item">
+            <a href="burger.jpg"
+               data-pswp-width="800"
+               data-pswp-height="533">
+              <img src="burger.jpg" alt="burger and ice cream" loading="lazy" />
+              <div class="pswp-caption-content-6"><strong>CAPTION: burger and ice cream</strong><br />A relaxing day for a burger</div>
+            </a>
+          </div>
+          
+          <div class="image-item">
+            <a href="ice-cream.jpg"
+               data-pswp-width="800"
+               data-pswp-height="1048">
+              <img src="ice-cream.jpg" alt="burger and ice cream" loading="lazy" />
+              <div class="pswp-caption-content-6"><strong>CAPTION: burger and ice cream</strong><br />ice cream</div>
+            </a>
+          </div>
+          
+          
+          <svg class="album-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="21" y1="8" x2="21" y2="19"/>
+            <path d="M 21 19 Q 21 21 19 21" fill="none"/>
+            <line x1="19" y1="21" x2="8" y2="21"/>
+            <rect x="3" y="3" width="13" height="13" rx="2" fill="currentColor"/>
+          </svg>
+          
+        </div>
+        
+      
+    </main>
+
+    <footer>
+      <p>Powered by BLOG</p>
+    </footer>
+  </div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
