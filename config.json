@@ -1,3 +1,6 @@
 {
-  "name": "Bob"
+  "name": "Bob",
+  "prefixes": [
+    "test-prefix"
+  ]
 }
